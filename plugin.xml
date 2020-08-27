@@ -80,6 +80,17 @@
         </dict>
       </array>
     </config-file>
+    
+     <config-file parent="keychain-access-groups" target="*/Entitlements-Debug.plist">
+      <array>
+        <string>$(AppIdentifierPrefix)$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+      </array>
+    </config-file>
+    <config-file parent="keychain-access-groups" target="*/Entitlements-Release.plist">
+      <array>
+        <string>$(AppIdentifierPrefix)$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+      </array>
+    </config-file>
 
     <!-- Google frameworks -->
     <!-- Downloaded here: https://developers.google.com/identity/sign-in/ios/sdk/ (changelog: https://developers.google.com/identity/sign-in/ios/release) -->
