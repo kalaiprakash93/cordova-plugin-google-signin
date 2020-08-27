@@ -60,6 +60,7 @@ typedef NS_ENUM(NSInteger, GIDSignInErrorCode) {
 // app switch occurs, it is best practice to have the UI react to the user's input by displaying
 // a spinner or other UI element. The |signInWillDispatch| method should be used to
 // stop or hide the spinner.
+@protocol GIDSignInUIDelegate <NSObject>
 
 @optional
 
@@ -101,8 +102,8 @@ typedef NS_ENUM(NSInteger, GIDSignInErrorCode) {
 // The object to be notified when authentication is finished.
 @property(nonatomic, weak) id<GIDSignInDelegate> delegate;
 
-// The view controller used to present |SFSafariViewContoller| on iOS 9 and 10.
-@property(nonatomic, weak) UIViewController *presentingViewController;
+// The object to be notified when sign in dispatch selection is finished.
+@property(nonatomic, weak) id<GIDSignInUIDelegate> uiDelegate;
 
 // The client ID of the app from the Google APIs console.  Must set for sign-in to work.
 @property(nonatomic, copy) NSString *clientID;
