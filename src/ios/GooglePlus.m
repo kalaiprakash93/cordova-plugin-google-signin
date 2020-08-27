@@ -88,7 +88,7 @@
         signIn.hostedDomain = hostedDomain;
     }
 
-    signIn.uiDelegate = self;
+    signIn.presentingViewController = self.viewController;
     signIn.delegate = self;
 
     // default scopes are email and profile
