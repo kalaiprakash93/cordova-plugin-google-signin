@@ -26,7 +26,9 @@
 
     if ([possibleReversedClientId isEqualToString:self.getreversedClientId] && self.isSigningIn) {
         self.isSigningIn = NO;
-        [[GIDSignIn sharedInstance] handleURL:url];
+        [[GIDSignIn sharedInstance] handleURL:url
+                            sourceApplication:options[@"sourceApplication"]
+                            annotation:options[@"annotation"]];
     }
 }
 
@@ -46,7 +48,7 @@
  @date July 19, 2015
  */
 - (void) trySilentLogin:(CDVInvokedUrlCommand*)command {
-    [[self getGIDSignInObject:command] restorePreviousSignIn];
+    [[self getGIDSignInObject:command] signInSilently];
 }
 
 /** Get Google Sign-In object
