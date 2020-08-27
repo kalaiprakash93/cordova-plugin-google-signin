@@ -101,7 +101,7 @@
     <framework src="libz.tbd" weak="true" />
     <framework src="libz.dylib" weak="true" />
 
-    <!-- Google frameworks 
+    <!-- Google frameworks 	-->
     <podspec>
       <config>
         <source url="https://cdn.cocoapods.org/"/>
@@ -109,9 +109,12 @@
       <pods use-frameworks="true">
         <pod name="GoogleSignIn" spec="~> 5.0.2"/>
         <pod name="GoogleUtilities" spec="~> 6.6"/>
+		<pod name="FBSDKCoreKit" spec="5.15.0"/>
+		<pod name="FBSDKLoginKit" spec="5.15.0"/>
+		<pod name="FBSDKShareKit" spec="5.15.0"/>
       </pods>
     </podspec>
-	-->
+
 		<hook type="after_plugin_install" src="hooks/ios/prerequisites.js"/>
   </platform>
 
